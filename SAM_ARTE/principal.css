@@ -1,0 +1,62 @@
+body, html {
+  height: 100%;
+  margin: 0;  
+  color:#fff; 
+font-family: 'McLaren', cursive; 
+}
+
+.bg {
+  background-image: url("bg1.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#menu {
+  position: absolute;
+  z-index: 9;
+  top:10px;
+  left:10px;  
+  filter: alpha(opacity=50);
+  border: 1px solid black;
+  text-align: center;
+  color: #fff;
+}
+
+.cab_menu {
+  width:100%;
+  padding: 1px;
+  cursor: move;
+  z-index: 10;
+  background-color:black;
+  color: rgb(29,154,192);
+  font-size: 18px;
+}
+
+.janela {
+  position: absolute;
+  display:none;
+  z-index: 9;
+  opacity: 0.9;
+  filter: alpha(opacity=50); 
+  border: 1px solid black;
+  text-align: center;
+}
+
+.cab {
+  width:100%;
+  padding: 0px;
+  cursor: move;
+  z-index: 10;
+  background-color:black;
+  color: rgb(29,154,192);
+  float: left;
+  font-size: 20px;
+}
+
+.cab_x {
+  float: right
+}
+
+

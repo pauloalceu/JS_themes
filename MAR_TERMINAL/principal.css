@@ -1,0 +1,107 @@
+body, html { /*Fundo da pagina*/
+  background-color: black;
+  background-image: radial-gradient(
+    rgba(0, 150, 0, 0.75), black 120%
+  );
+  height: 100vh; 
+}
+
+
+
+#menu { /*Menu "Sistema" */
+  position: absolute;
+  z-index: 9;
+  top:10px;
+  left:10px;
+  background-color: black;
+  background-image: radial-gradient(
+    rgba(0, 150, 0, 0.75), black 120%
+  );
+  height: 20vh; 
+  border: 1px solid rgb(0, 0, 0);
+  text-align: center;
+}
+
+.janela { /*Janelas*/
+  position: absolute;
+  display:none;
+  z-index: 9;
+  background-color: black;
+  background-image: radial-gradient(
+    rgba(0, 150, 0, 0.75), black 120%
+  );
+  
+  color: white;
+  font: 1.3rem Inconsolata, monospace;
+  text-shadow: 0 0 5px #C8C8C8;
+  border: 1px solid #666;
+  text-align: left;
+  
+}
+
+.cab { /*Cabeçalho Janelas*/
+  width:100%;
+  padding: 0px;
+  cursor: move;
+  z-index: 10;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  float: center;
+}
+
+.cab_x {
+  float: left;
+}
+
+.cab_menu { /*Cabeçalho "Sistemas"*/
+  width:100%;
+  padding: 0px;
+  cursor: move;
+  z-index: 10;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font: 1.3rem Inconsolata, monospace;
+}
+
+.close {
+  background-image: url("close.png");
+  background-position: center;
+  background-repeat: no-repeat;  
+  height: 16px;  
+  width: 16px;    
+  padding: 2px;
+}
+
+button.mybutton {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.75);
+	padding: 10px 8px;
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(rgba(0, 150, 0, 0.75)),
+		to(rgba(0, 150, 0, 0.75)));
+	background: linear-gradient(
+		top,
+		rgba(0, 150, 0, 0.75) 0%,
+		rgba(0, 150, 0, 0.75));
+	border-radius: 12px;
+	border: 1px solid rgba(0, 0, 0, 0.75);
+	box-shadow:
+		0px 0px 0px rgba(000,000,000,0),
+		inset 0px 0px 0px rgba(255,255,255,0.6);
+	text-shadow:
+		0px 0px 0px rgba(000,000,000,0),
+		0px 0px 0px rgba(000,000,000,0.9);
+}
+
+button.close {
+  background-image: url("1.png");
+  background-position: center;
+  background-repeat: no-repeat;  
+  height: 75px;  
+  width: 75px;    
+  padding: 20px;  
+}
+
+

@@ -1,0 +1,58 @@
+body, html {
+  height: 100%;
+  margin: 10px;  
+  background:#A9A9A9 ; 
+font-family: 'McLaren', cursive; 
+}
+
+
+#menu {
+  position: absolute;
+  z-index: 9;
+  top:10px;
+  left:10px;
+  background-color: #1C1C1C;
+  border: 5px solid #000;
+  text-align: center;
+  border-radius: 10px 10px;
+}
+
+.janela {
+  position: absolute;
+  display:none;
+  z-index: 9;
+  background-color: #1C1C1C;
+  border: 5px solid #000;
+  text-align: center;
+  color: #FFF;
+  border-radius: 10px 10px;
+}
+
+a {
+  color: #FFF;
+}
+
+.cab {
+  width:100%;
+  padding: 0px;
+  cursor: move;
+  z-index: 10;
+  background-color: #FFF;
+  color: #000;
+  float: left;
+  font-size: 20px;
+}
+
+.cab_x {
+  float: right
+}
+
+.cab_menu {
+  width:100%;
+  padding: 0px;
+  cursor: move;
+  z-index: 10;
+  background-color: #FFF;
+  color: #000;
+  font-size: 20px;
+}
