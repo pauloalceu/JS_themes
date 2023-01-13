@@ -1,0 +1,162 @@
+﻿<!-- HTML 4 -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- HTML5 -->
+<meta charset="utf-8"/>
+
+<link id="default" rel="stylesheet" type="text/css"  href="PADRAO/principal.css">
+
+<script>
+	//GERAL
+	  function pega(id) {
+		return document.getElementById(id);
+	  }  
+	
+	function fecha(element){
+		pega(element).style.display='none';
+	}	  
+
+	//JANELAS
+	function init(){
+		dragElemento(pega("menu"));
+		const janelas = document.querySelectorAll('.janela');
+		for (var i = 0; i < janelas.length; i++) {
+			dragElemento(pega(janelas[i].id));
+		}	
+	}
+
+	function abre(element,x,y){
+		pega("my" + element.id).style.display='block';
+		pega("my" + element.id).style.top = x;
+		pega("my" + element.id).style.left = y;
+	}
+
+	function dragElemento(elmnt) {
+	  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+	  if (pega(elmnt.id + "header")) {
+		pega(elmnt.id + "header").onmousedown = dragMouseDown;
+	  } else {
+		elmnt.onmousedown = dragMouseDown;
+	}
+		function dragMouseDown(e) {
+			e = e || window.event;
+			e.preventDefault();
+			pos3 = e.clientX;
+			pos4 = e.clientY;
+			document.onmouseup = closeDragElement;
+			document.onmousemove = elementDrag;
+		}
+
+		function elementDrag(e) {
+			e = e || window.event;
+			e.preventDefault();
+			pos1 = pos3 - e.clientX;
+			pos2 = pos4 - e.clientY;
+			pos3 = e.clientX;
+			pos4 = e.clientY;
+			elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+			elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+		}
+
+		function closeDragElement() {
+			document.onmouseup = null;
+			document.onmousemove = null;
+		}
+	}
+ 
+	//CSS
+	function AplicaCSS() {
+		var x = document.getElementById("mySelect");
+		document.getElementById('default').href = x.options[x.selectedIndex].value + "/principal.css";
+	}
+</script>
+
+<body onload="init();">
+
+<div id="menu" class="menu">
+  <div id="menuheader" class="cab_menu">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sistema&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+    </br>
+	<button id="div" type="button" class="mybutton" onclick="abre(this,350,100)">Cadastro</button></br></br>
+	<button id="div2" type="button" class="mybutton" onclick="abre(this,150,750)">Configurações</button></br></br>
+	<button id="div3" type="button" class="mybutton" onclick="abre(this,50,750)">Sobre</button>
+    </br>	
+    </br>	
+</div>
+
+
+<div id="mydiv" class="janela">
+  <div id="mydivheader" class="cab">Janela Exemplo:<div class="cab_x"><a href="#" onclick="fecha('mydiv');"><div class="close"></div></a></div></div>
+<p>
+Lorem ipsum risus ornare amet morbi tempor pulvinar aliquet feugiat senectus imperdiet molli</br>s per tristique quam scelerisque, vehicula massa hendrerit porttitor dolor hendrerit aliquam ac aliquam morbi nullam sollicitudin quisque luctus. 
+placerat nam urna suscipit ad primis rutrum </br>himenaeos, vestibulum ultrices gravida primis litora torquent, malesuada odio class dictumst eget nullam. 
+platea etiam cras accumsan sagittis fermentum libero quam ultricies ta</br>citi, facilisis torquent cursus bib</br>endum sociosqu integer pharetra. 
+ad torquent nisi rutrum taciti netus lorem porta duis nam, platea elementum plate</br>a ornare class vehicula interdum curabitur suspendisse nisi, volutpat quam tempor vulputate interdum rutrum convallis ornare. 
+</p>
+<p>
+Sem quisque ligula faucibus quis viverra gravida habitant imperdiet,</br> leo quam donec nullam est convallis orci sollicitudin semper, potenti posuere ante elementum nulla erat ornare. 
+leo hendrerit hac quam massa ligula augue ornare aptent sapien nisi</br> varius ultricies, nullam feugiat vulputate hendrerit suspendisse ante bibendum ultricies habitant quis vivamus. 
+ligula quis luctus euismod pretium mi class pretium purus porttito</br>r neque augue, scelerisque porta auctor tempor dolor urna justo lorem tempus. 
+donec quam aliquam rutrum molestie viverra feugiat nisl tellus rut</br>rum, enim tellus taciti consectetur molestie neque sapien sagittis praesent auctor, fusce aenean consectetur sollicitudin habitant tincidunt ante ultrices. 
+</p>
+<br/><br/>
+<button type="button" class="mybutton">Confirmar</button>
+<button type="button" class="mybutton close"></button>
+<br/><br/><br/>
+</div>
+
+<div id="mydiv2" class="janela">
+  <div id="mydiv2header" class="cab">Configurações:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="cab_x" onclick="fecha('mydiv2');"><div class="close"></div></a></div>
+	</br></br>
+	<form>Selecione seu tema favorito:
+		<select id="mySelect">
+			<option value="PADRAO">Padrao</option>		
+			<option value="RED">Red</option>
+			<option value="CAM_CONTRASTE2">Blue</option>
+			<option value="CONTRASTE">Alto Contraste 1</option>
+			<option value="CONTRASTE2">Alto Contraste 2</option>
+			<option value="PAPELPAREDE">Papel de Parede</option>
+			<option value="MATRIX">Matrix</option>
+			<option value="TINTIN">TimTin</option>
+			<option value="LIONKING">Lion King</option>
+			<option value="GRAYDOG">Gray Dog</option>
+			<option value="RELAX">Relax</option>
+			<option value="CAM_MARVEL">Marvel</option>
+			<option value="CAM_GUARDIANS">Guardians of the Galaxy</option>
+			<option value="CAM_GROOT"> Baby Groot</option>
+			<option value="CAM_TINTIN">Guardiões</option>
+			<option value="CAM_PAPELPAREDE">Gamora</option>
+			<option value="CAM_CONTRASTE"> Nebula</option>
+			<option value="DIEG_TEST1"> Hypnocat</option>
+			<option value="DIEG_TEST2">Militar</option>
+			<option value="DIEG_TEST3">Alto Contraste 2</option>		
+			<option value="EDU_PUTIN">Putin Judoca</option>
+			<option value="EDU_ARANHA">Picasso Aranha</option>
+			<option value="EDU_RUBRONEGRO">Rubro Negro</option>
+			<option value="EDU_DAVINCE">DaVince</option>	
+			<option value="MAR_CONTRASTE3">Alto Contraste 3</option>
+			<option value="MAR_TERMINAL">Terminal</option>
+			<option value="MAR_UNICORNIOS">Unicórnios</option>
+			<option value="PED_BATMAN">Batman</option>
+			<option value="PED_BMW">BMW</option>
+			<option value="PED_CONTRASTE3">Contraste 3</option>	
+			<option value="RAFAEL_ET">E.T</option>
+			<option value="RAFAEL_KUAT">KUAT</option>
+			<option value="RAFAEL_CONTRASTE3">Alto Contraste Amarelo</option>
+			<option value="SAM_CONTRASTE2">Alto Contraste 2</option>
+			<option value="SAM_LIVRE">Velozes e Furiosos</option>
+			<option value="SAM_ARTE">Arte</option>			
+		</select>
+	</form>
+	<button type="button" class="mybutton" onclick="AplicaCSS()">Aplicar</button><br/><br/><br/>
+</div>
+
+
+<div id="mydiv3" class="janela">
+  <div id="mydiv2header" class="cab">Sobre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="cab_x" onclick="fecha('mydiv3');"><div class="close"></div></a></div>
+	</br></br>
+	&nbsp;&nbsp;&nbsp;&nbsp;Criado por: Prof. Paulo Alceu&nbsp;&nbsp;&nbsp;&nbsp;
+	</br></br>
+</div>
+
+<div class="bg"></div>
+
+</body>

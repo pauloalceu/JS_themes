@@ -1,0 +1,60 @@
+body, html {
+  height: 100%;
+  margin: 0;  
+  background: #d3d3d3;  
+}
+
+.bg {
+  background-image: url("bg1.gif");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#menu {
+  position: absolute;
+  z-index: 9;
+  top:10px;
+  left:10px;  
+  background-color: #d3d3d3;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+  color: #fff;
+}
+
+.cab_menu {
+  width:100%;
+  padding: 2px;
+  cursor: move;
+  z-index: 10;
+  background-color: #556B2F;
+  color: #000;
+  font-size: 15px;
+}
+
+
+.janela {
+  position: absolute;
+  display:none;
+  z-index: 9;
+  background-color: #852a;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+}
+
+.cab {
+  width:100%;
+  padding: 0px;
+  cursor: move;
+  z-index: 10;
+  background-color: #556B2F;
+  color: #fff;
+  float: left;
+  font-size: 20px;
+}
+
+.cab_x {
+  float: right
+}
+
